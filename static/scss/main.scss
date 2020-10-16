@@ -12,7 +12,7 @@ body {
 a,
 a:hover {
     color: #4b4b4b !important;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 p {
@@ -20,8 +20,88 @@ p {
 }
 
 
+/* header */
+
+.header {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .05);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    list-style: none;
+    background-color: #fff;
+    padding: 0;
+    margin: 20px 20px;
+}
+
+.nav-list li a {
+    display: block;
+    text-decoration: none;
+}
+
+.button {
+    background-color: $main-orange;
+    border: none;
+    color: white;
+    padding: 10px 25px !important;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.24);
+}
+
+.button:hover {
+    background-color: $main-orange !important;
+    color: white !important;
+}
+
+button:hover, .nav-link:hover {
+    color: $main-orange;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+    color: $main-orange;
+}
+
+#logo-icon {
+    position: fixed;
+    height: 30px;
+    left: 25px;
+    top: 17px;
+}
+
+.header .logo {
+    display: block;
+    float: left;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-left: 40px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: $main-orange !important;
+}
+
+.start-button {
+    color: white !important;
+    float: right;
+}
 
 /* main content */
+
 main {
   padding-top: 50px;
 }
@@ -33,6 +113,7 @@ main {
 }
 
 /* typography */
+
 input[type=button],
 input[type=submit],
 input[type=reset] {
@@ -106,4 +187,25 @@ input[type=text]:placeholder {
 
 #formFooter {
   text-align: center;
+}
+
+button,
+button:hover,
+button:active,
+button:focus {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    box-shadow: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin: 20px 0px 0px 20px !important;
+    outline: none;
+}
+
+button:hover, .nav-link:hover {
+    color: $main-orange;
 }

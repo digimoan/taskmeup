@@ -16,6 +16,7 @@
 <body>
 <header class="header">
     {% block header %}
+        <img src="{% static "img/icon.svg"%}" id="logo-icon">
         <a href="/" class="logo">TASK</a>
         <ul class="menu">
             {% if user.is_authenticated %}
@@ -68,7 +69,7 @@
                         Login
                     </button>
                 </li>
-                <li><a href="#" class="button sell-button">Get Started</a></li>
+                <li><a href="#" class="button start-button">Get Started</a></li>
 
             {% endif %}
         </ul>
