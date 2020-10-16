@@ -352,4 +352,44 @@ button:hover, .nav-link:hover {
   color: #EE8B00;
 }
 
+/* footer */
+footer {
+  background-color: #f2f2f2;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 3% 6%;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+footer {
+  padding: 3% 5%;
+  color: #616161;
+}
+
+.footer-title {
+  font-weight: 500;
+  color: black;
+}
+
+.social-network {
+  max-width: 50px;
+  padding: 0% 3%;
+}
+
+#copyright {
+  background-color: #ffffff;
+  color: black;
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  height: 5%;
+  bottom: 0;
+  text-align: right;
+  padding: 1% 2%;
+}
+
 /*# sourceMappingURL=main.css.map */
