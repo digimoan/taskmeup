@@ -3,8 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <title>Task Me Up!</title>
+    {% load static %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/4.4_dist_css_bootstrap.min.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <link rel="icon" href="{% static "img/favicon.png"%}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{% static "img/favicon.png"%}" type="image/x-icon"/>
 </head>
+    
 <body>
+<header class="header">
+    {% block header %}
+        <a href="/" class="logo">TASK</a>
+        <ul class="menu">
+            {% if user.is_authenticated %}
+            <li>
+                <button type="button" onclick="location.href='/feed'">
+                    Projects
+                </button>
+            </li>
+            <li>
+                <button type="button" onclick="location.href='/profile'">
+                    Tasks
+                </button>
+            </li>
+            <li>
+                <button type="button" onclick="location.href='/chat'">
+                    Time Tracker
+                </button>
+            </li>
+            <li>
+                <button type="button" onclick="location.href='/logout/'">
+                    Log Out
+                </button>
+            </li>
+            <li><a href="/add_listing/" class="button sell-button">Get Started</a></li>
+
+            {% else %}
+            
+                <li>
+                    <button type="button" onclick="location.href='/logout/'">
+                        About
+                    </button>
+                </li>
+                <li>
+                    <button type="button" onclick="location.href='/logout/'">
+                        Features
+                    </button>
+                </li>
+                <li>
+                    <button type="button" onclick="location.href='/logout/'">
+                        Why Us?
+                    </button>
+                </li>
+                <li>
+                    <button type="button" data-toggle="modal" data-target="#signupModal">
+                        Sign Up
+                    </button>
+                </li>
+                <li>
+                    <button type="button" data-toggle="modal" data-target="#loginModal">
+                        Login
+                    </button>
+                </li>
+                <li><a href="#" class="button sell-button">Get Started</a></li>
+
+            {% endif %}
+        </ul>
+    </header>
+    {% endblock header %}
+</div>
+
+
+<div class="main">
+
+    <!-- login modal -->
+    <div class="modal fade {% if login_error_msg %} onstart {% endif %}" id="loginModal" tabindex="-1" role="dialog"
+         aria-labelledby="loginModalLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="text" id="username" class="fadeIn second" name="username"
+                               placeholder="username or email">
+                        <input type="password" id="password" class="fadeIn third" name="password"
+                               placeholder="password">
+                        <input type="submit" name="user_login" class="fadeIn fourth" value="Log In">
+                    </form>
+                    <br><br>
+                    {% if login_error_msg %}
+                        <div class="alert alert-primary text-center" role="alert" style="margin-top: 15px">
+                            {{ login_error_msg }}
+                        </div>
+                    {% endif %}
+                    <!-- Remind Passowrd -->
+                    <div id="formFooter">
+                        <a class="underlineHover" href="password_reset/">Forgot Password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- signup modal -->
+    <div class="modal fade {% if signup_error_msg %} onstart {% endif %}" id="signupModal" tabindex="-1" role="dialog"
+         aria-labelledby="signupModalLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="text" id="user-setusername" class="fadeIn second" name="username"
+                               placeholder="username">
+                        <input type="text" id="user-email" class="fadeIn second" name="email" placeholder="email">
+                        <input type="password" id="user-setpassword" class="fadeIn third" name="password"
+                               placeholder="password">
+                        <input type="password" id="user-retypepassword" class="fadeIn third" name="password_retype"
+                               placeholder="password again">
+                        <br>
+                        <input type="submit" name="user_signup" class="fadeIn fourth" value="Sign Up">
+                        <br><br>
+                    </form>
+                    {% if signup_error_msg %}
+                        <div class="alert alert-primary text-center" role="alert" style="margin-top: 15px">
+                            {{ signup_error_msg }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock content %}
+
+</div>
+
+<footer>
+    <div id="footer-1">
+        <p class="footer-title">Project</p>
+        <p>New Project</p>
+        <p>Overview</p>
+        <p>Time Tracker</p>
+    </div>
+    <div id="footer-2">
+        <p class="footer-title">Contact Us</p>
+        <p>Send Us An Email</p>
+        <p>Subscribe To The Newsletter</p>
+        <br>
+        <p class="footer-title">Follow Us</p>
+        <img src="{% static "img/social/facebook-logo.png"%}" class="social-network">
+        <img src="{% static "img/social/instagram-logo.png"%}" class="social-network">
+        <img src="{% static "img/social/twitter-logo.png"%}" class="social-network">
+    </div>
+    <div id="footer-3">
+        <p class="footer-title">About</p>
+        <p>Get To Know Us</p>
+        <p>The Team</p>
+        <p>Resources</p>
+        <p>Privacy Policy</p>
+        <p>Terms &amp; Conditions</p>
+    </div>
+    <div id="footer-4">
+        <p class="footer-title">Support</p>
+        <p>Help Center</p>
+        <p>Trust &amp; Safety</p>
+    </div>
+</footer>
+
+<div id="copyright">© 2020 Copyright: Task Me Up!</div>
+    
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
 
 </body>
 </html>

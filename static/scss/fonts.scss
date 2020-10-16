@@ -1,0 +1,23 @@
+/* fonts */
+@import "vars";
+
+html {
+	font-family: $main-font-family;
+	font-size: $main-font-size;
+}
+
+h1 {
+	font-size: $main-font-size * 1.6;
+}
+
+h2 {
+	font-size: $main-font-size * 1.5;
+}
+
+h3 {
+	font-size: $main-font-size * 1.3;
+}
+
+p, code {
+	font-size: $main-font-size * 1;
+}
