@@ -1,0 +1,70 @@
+{% extends "base-loggedin.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="main">
+    <div class="landing">
+
+        <img src="{% static "imgs/first.svg"%}" class="imgs">
+        <div class="content">
+                <h3 id="h3task">Task List</h3>
+                <table>
+                    <tr>
+                        <th>Tasks</th>
+                        <th>Project</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                      <td>Prototype</td>
+                      <td>PGP</td>
+                      <td>Done</td>
+                        <td><img alt="edit" src="{% static "img/icon/edit.png"%}" id="edit" data-toggle="modal" data-target="#taskChangeModal"></td>
+                    </tr>
+                    <tr>
+                      <td>Research</td>
+                      <td>PGP</td>
+                      <td>In Progress </td>
+                        <td><img alt="edit" src="{% static "img/icon/edit.png"%}" id="edit" data-toggle="modal" data-target="#taskChangeModal"></td>
+
+                    </tr>
+                    <tr>
+                      <td>Program </td>
+                      <td>PGP </td>
+                      <td>To Do </td>
+                        <td><img alt="edit" src="{% static "img/icon/edit.png"%}" id="edit" data-toggle="modal" data-target="#taskChangeModal"></td>
+
+                    </tr>
+                </table>
+            </div>
+
+        <!-- createProject modal -->
+    <div class="modal fade" id="taskChangeModal" tabindex="-1" role="dialog"
+         aria-labelledby="taskChangeModalLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <h5>Task: #</h5>
+                          <select name="type" id="type">
+                            <option value="inProgress">In Progress</option>
+                            <option value="toDo">To Do</option>
+                            <option value="Done">Done</option>
+                            <option value="needHelp">Need Help</option>
+                          </select>
+                          <br><br>
+                          <input type="submit" id="okTask" value="Ok" >
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
