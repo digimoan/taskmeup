@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from task.views import home_view, tracker_view, createPage_view, projectPage_view, taskPage_view
+from task.views import home_view, tracker_view, createPage_view, projectPage_view, taskPage_view, projectPageTask_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +25,6 @@ urlpatterns = [
     path('timetracker/', tracker_view.as_view(), name='tracker'),
     path('create_page/', createPage_view.as_view(), name='createPage'),
     path('project_page/', projectPage_view.as_view(), name='projectPage'),
-    path('task_page/', taskPage_view.as_view(), name='projectPage'),
+    path('task_page/', taskPage_view.as_view(), name='taskPage'),
+    path('project_page_withtasks/', projectPageTask_view.as_view(), name='projectTaskPage'),
 ]

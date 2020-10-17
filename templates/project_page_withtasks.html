@@ -1,0 +1,72 @@
+{% extends "base-loggedin.html" %}
+{% load static %}
+{% block content %}
+
+<div class="main">
+    <div class="landing">
+        <img src="{% static "imgs/first.svg"%}" class="imgs">
+        <div class="content">
+            <h1>Project Name</h1>
+            <b><p>Project Manager:</b> John Doe</p>
+            <b><p>Start Date:</b> 10/10/2020</p>
+            <b><p>End Date:</b> 10/11/2020</p>
+
+                <table>
+                    <tr>
+                        <th>Tasks</th>
+                        <th>Member</th>
+                        <th>Status</th>
+
+                    </tr>
+                    <tr>
+                      <td>Prototype</td>
+                      <td>Margarida</td>
+                      <td>Finished</td>
+                    </tr>
+                    <tr>
+                      <td>Research</td>
+                      <td>Ana</td>
+                      <td>In Progress</td>
+
+                    </tr>
+                    <tr>
+                      <td>Program </td>
+                      <td>Tiago </td>
+                      <td>To Do </td>
+
+                    </tr>
+                </table>
+            <br><br><br>
+        <button id="addTask" type="button" class="button main-button" data-toggle="modal" data-target="#addTaskModal">
+            Add Task
+        </button>
+        <button id="viewRoadmap" type="button" class=button main-button">
+            View RoadMap
+        </button>
+    </div>
+
+        <!-- addTask modal -->
+    <div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog"
+         aria-labelledby="addTaskModalLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="text" id="task-name" class="fadeIn second" name="taskname"
+                               placeholder="task name">
+                        <input type="text" id="project-member" class="fadeIn second" name="taskmember" placeholder="assigned member">
+                        <input type="date" id="task-deadline" class="fadeIn third" name="deadline" placeholder="deadline dd/mm/yyyy">
+                        <input type="color" id="task-color" class="fadeIn fourth" name="color" placeholder="color">
+                        <input type="submit" name="create_task" class="fadeIn fourth" value="Create">
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -32,6 +32,13 @@ class projectPage_view(View):
         return render(request, self.template)
 
 
+class projectPageTask_view(View):
+    template = 'project_page_withtasks.html'
+
+    def get(self, request):
+        return render(request, self.template)
+
+
 class taskPage_view(View):
     template = 'task_page.html'
 
