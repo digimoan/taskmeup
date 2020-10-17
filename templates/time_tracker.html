@@ -1,0 +1,31 @@
+{% extends "base-loggedin.html" %}
+
+{% load static %}
+{% block content %}
+
+<div class="main">
+    <div class="landing">
+
+        <img src="{% static "imgs/first.svg"%}" class="imgs">
+
+        <div class="content">
+            <h1> Time Tracker </h1>
+            <p>By Project <img src="{% static "img/icon/down.png"%}" class="tracker-img"></p>
+
+            <div class="landing tracker">
+                <img src="{% static "img/icon/tracker.png"%}" class="tracker-img">
+                <img src="{% static "img/icon/tracker.png"%}" class="tracker-img">
+            </div>
+            
+            <div class="landing tracker">
+                <img src="{% static "img/icon/tracker.png"%}" class="tracker-img">
+                <img src="{% static "img/icon/tracker.png"%}" class="tracker-img">
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}
+

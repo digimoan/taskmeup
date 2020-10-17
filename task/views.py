@@ -10,6 +10,12 @@ class home_view(View):
     def get(self, request):
         return render(request, self.template)
 
+class tracker_view(View):
+    template = 'time_tracker.html'
+
+    def get(self, request):
+        return render(request, self.template)
+
 class createPage_view(View):
     template = 'create_page.html'
 

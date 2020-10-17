@@ -357,7 +357,7 @@ button:hover, .nav-link:hover {
 
 /* footer */
 footer {
-  background-color: #f2f2f2;
+  background-color: #FBF3E6;
   position: relative;
   bottom: 0;
   width: 100%;
@@ -439,6 +439,15 @@ footer {
   width: 25px;
   margin-left: -35px;
   margin-right: 5px;
+}
+
+.tracker-img {
+  max-width: 300px;
+}
+
+.tracker {
+  padding: 10px 10px;
+  margin-bottom: 0px;
 }
 
 /*# sourceMappingURL=main.css.map */
