@@ -262,6 +262,8 @@ button:hover, .nav-link:hover {
 
 
 
+
+
 /* modal */
 .modal-body form {
   text-align: center;
@@ -310,6 +312,8 @@ input[type=reset]:active {
 }
 
 input[type=text],
+input[type=color],
+input[type=date],
 input[type=password] {
   background-color: #f6f6f6;
   border: none;
@@ -330,6 +334,7 @@ input[type=password] {
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
 }
+
 
 input[type=text]:focus {
   background-color: #fff;

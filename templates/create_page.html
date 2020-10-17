@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base-loggedin.html" %}
 {% load static %}
 {% block content %}
 
@@ -25,9 +25,9 @@
                         <input type="text" id="project-name" class="fadeIn second" name="projectname"
                                placeholder="project name">
                         <input type="text" id="project-manager" class="fadeIn second" name="projectmanager" placeholder="project manager">
-                        <input type="text" id="project-startdate" class="fadeIn third" name="startdate"  placeholder="start date dd/mm/yyyy">
+                        <input type="date" id="project-startdate" class="fadeIn third" name="startdate"  placeholder="start date dd/mm/yyyy">
 
-                        <input type="text" id="project-enddate" class="fadeIn fourth" name="enddate"  placeholder="end date dd/mm/yyyy">
+                        <input type="date" id="project-enddate" class="fadeIn fourth" name="enddate"  placeholder="end date dd/mm/yyyy">
                         <br>
                         <input type="submit" name="create_project" class="fadeIn fourth" value="Create">
                         <br>

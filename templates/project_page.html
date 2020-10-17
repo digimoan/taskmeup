@@ -1,20 +1,21 @@
-{% extends "base.html" %}
+{% extends "base-loggedin.html" %}
 {% load static %}
 {% block content %}
 
 <div class="main">
     <div class="landing">
-        <img src="{% static "imgs/undraw_work_chat_erdt.svg"%}" class="imgs">
+        <img src="{% static "imgs/first.svg"%}" class="imgs">
         <div class="content">
             <h1>Project Name</h1>
-        <p>Project Manager:</p>
-        <p>Start Date:</p>
-        <p>End Date:</p>
+            <br> <br>
+            <b><p>Project Manager:</p></b>
+            <b><p>Start Date:</p></b>
+            <b><p>End Date:</p></b>
         <br> <br>
-        <button type="button" class="button start-button" data-toggle="modal" data-target="#addTaskModal">
+        <button type="button" class="button main-button" data-toggle="modal" data-target="#addTaskModal">
             Add Task
         </button>
-        <button type="button" href="#" class="button start-button">
+        <button type="button" class=button main-button">
             View RoadMap
         </button>
     </div>
@@ -30,14 +31,10 @@
                         <input type="text" id="task-name" class="fadeIn second" name="taskname"
                                placeholder="task name">
                         <input type="text" id="project-member" class="fadeIn second" name="taskmember" placeholder="assigned member">
-                        <label for="task-deadline">Task Deadline:</label>
-                        <input type="date" id="task-deadline" class="fadeIn third" name="deadline">
-                        <br>
-                        <label for="task-color">Color:</label>
-                        <input type="color" id="task-color" class="fadeIn third" name="color">
-                        <br>
+                        <input type="date" id="task-deadline" class="fadeIn third" name="deadline" placeholder="deadline dd/mm/yyyy">
+                        <input type="color" id="task-color" class="fadeIn fourth" name="color" placeholder="color">
                         <input type="submit" name="create_task" class="fadeIn fourth" value="Create">
-                        <br><br>
+                        <br>
                     </form>
                 </div>
             </div>
@@ -45,7 +42,6 @@
     </div>
     </div>
 </div>
-</div>
-</div>
+
 
 {% endblock content %}
