@@ -2,17 +2,16 @@
 {% load static %}
 {% block content %}
 
-<h3>Task Me Up!</h3>
 <div class="main">
     <div class="landing">
-    <img src="{% static "imgs/undraw_work_chat_erdt.svg"%}" class="imgs">
+    <img src="{% static "imgs/first.svg"%}" class="imgs">
     <div class="content">
         <h1>Task Me Up!</h1>
-        <button type="button" class="button start-button" data-toggle="modal" data-target="#createProjectModal">
+        <button type="button" class="button main-button" data-toggle="modal" data-target="#createProjectModal">
             Create Project
         </button>
         <br>
-        <a href="#" class="button start-button"> Open Project</a>
+        <button type="button" class="button main-button"> Open Project</a>
     </div>
 
         <!-- createProject modal -->
@@ -26,20 +25,19 @@
                         <input type="text" id="project-name" class="fadeIn second" name="projectname"
                                placeholder="project name">
                         <input type="text" id="project-manager" class="fadeIn second" name="projectmanager" placeholder="project manager">
-                        <label for="project-startdate">Start date:</label>
-                        <input type="date" id="project-startdate" class="fadeIn third" name="startdate">
-                        <br>
-                        <label for="project-enddate">End date:</label>
-                        <input type="date" id="project-enddate" class="fadeIn third" name="enddate">
+                        <input type="text" id="project-startdate" class="fadeIn third" name="startdate"  placeholder="start date dd/mm/yyyy">
+
+                        <input type="text" id="project-enddate" class="fadeIn fourth" name="enddate"  placeholder="end date dd/mm/yyyy">
                         <br>
                         <input type="submit" name="create_project" class="fadeIn fourth" value="Create">
-                        <br><br>
+                        <br>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     </div>
+</div>
 </div>
 </div>
 {% endblock content %}

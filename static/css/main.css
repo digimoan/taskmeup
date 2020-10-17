@@ -247,10 +247,20 @@ button:hover, .nav-link:hover {
   float: right;
 }
 
+.main-button{
+  color: white !important;
+  float: left;
+  padding: 5px 2px;
+  min-width:150px;
+
+}
+
 /* main content */
 .main {
   padding: 50px 0px;
 }
+
+
 
 /* modal */
 .modal-body form {
