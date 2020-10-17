@@ -3,6 +3,76 @@
 {% load static %}
 {% block content %}
 
-<h1> oi </h1>
+<div class="main">
+    <div class="landing">
+
+        <img src="{% static "imgs/first.svg"%}" class="imgs">
+
+        <div class="content">
+            <h1> Project management — made easy </h1>
+            <p>Based in Lisbon, the Task Me Up team is here to change the way we look at project work. With a simple, easy to use interface, organizing and dividing tasks is now easier than ever so you can focus your time on actual work.<br><br>
+
+            See for yourself. Try out our app for free.</p>
+
+            <a href="#" class="button start-button">Create a Project</a>
+        </div>
+        
+    </div>
+    
+    <div class="features">
+        <h2>Features</h2>
+        
+        <div class="landing">
+
+        
+            <img src="{% static "imgs/second.svg"%}" class="imgs">
+
+            <div class="feats">
+            <p><b>Create Projects &amp; Tasks</b><br>
+                Our projects work like a folder — you can name them, assign team members, and create tasks. Members can log the start and finish of their tasks.</p>
+
+            <p><b>Overview Tasks</b><br>
+                On “My Tasks” each team member can overview all their assigned tasks on the project. They’re organized by colors as “To do”, “Doing” and “Done”.</p>
+
+            <p><b>Overview Time Spent</b><br>
+                At the end of each project, you can use the “Time Tracker” tab to see how long each team member spent on each task and other sorts of time metrics.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="why-us">
+        <h2>Why Us?</h2>
+        
+        <div class="landing">
+            
+            <ul class="why-list">
+                <li class="why-text">
+                    <b><img src="{% static "img/icon/check.png" %}" class="check-circle">
+                        Simple, Easy To Use Interface</b><br>
+                    <p class="why-txt">
+                        We use the simplicity to our favor. We take care of the hard parts so you can focus on doing what you know best — working.</p>
+                </li>
+                <li class="why-text">
+                    <b><img src="{% static "img/icon/check.png" %}" class="check-circle">
+                        Tailored To Your Needs</b><br>
+                    <p class="why-txt">
+                    By implementing a trustworthy review system, we try to make sure
+                        you know exactly what you’re getting when you see an ad.</p>
+                </li>
+                <li class="why-text">
+                    <b><img src="{% static "img/icon/check.png" %}" class="check-circle">
+                        We’re Here For You</b><br>
+                    <p class="why-txt">
+                    Our team is on deck 24/7 doing their best to go through every report,
+                        complaint, request, and answer any questions you might have. </p>
+                </li>
+            </ul>
+            <img src="{% static "imgs/third.svg"%}" class="imgs">
+
+        
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}
