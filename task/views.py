@@ -9,3 +9,16 @@ class home_view(View):
 
     def get(self, request):
         return render(request, self.template)
+
+class createPage_view(View):
+    template = 'create_page.html'
+
+    def get(self, request):
+        return render(request, self.template)
+
+
+class projectPage_view(View):
+    template = 'project_page.html'
+
+    def get(self, request):
+        return render(request, self.template)
