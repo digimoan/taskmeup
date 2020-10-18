@@ -21,17 +21,17 @@
         <ul class="menu">
             {% if user.is_authenticated %}
             <li>
-                <button type="button" onclick="location.href='/feed'">
+                <button type="button" onclick="location.href='/project'">
                     Projects
                 </button>
             </li>
             <li>
-                <button type="button" onclick="location.href='/profile'">
+                <button type="button" onclick="location.href='/tasks'">
                     Tasks
                 </button>
             </li>
             <li>
-                <button type="button" onclick="location.href='/chat'">
+                <button type="button" onclick="location.href='/timetracker'">
                     Time Tracker
                 </button>
             </li>
@@ -92,7 +92,7 @@
                                placeholder="username or email">
                         <input type="password" id="password" class="fadeIn third" name="password"
                                placeholder="password">
-                        <input type="submit" name="user_login" class="fadeIn fourth" value="Log In">
+                        <a href="/create" class="button start-button fadeIn fourth" style="float: none;">Log In</a>
                     </form>
                     <br><br>
                     {% if login_error_msg %}
