@@ -28,5 +28,5 @@ urlpatterns = [
     path('project_page/', projectPage_view.as_view(), name='projectPage'),
     path('task_page/', taskPage_view.as_view(), name='taskPage'),
     path('project_page_withtasks/', projectPageTask_view.as_view(), name='projectTaskPage'),
-    path('project_page_roadmap/', projectPageRoadmap_view.as_view()), name='projectPageRoadmap')
+    path('project_page_roadmap/', projectPageRoadmap_view.as_view(), name='projectPageRoadmap'),
 ]
