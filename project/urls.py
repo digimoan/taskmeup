@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from task.views import home_view, tracker_view, createPage_view, projectPage_view, taskPage_view, projectPageTask_view,\
-    projectPageRoadmap_view
+    projectPageRoadmap_view, taskPagedone_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +27,7 @@ urlpatterns = [
     path('create/', createPage_view.as_view(), name='createPage'),
     path('project/', projectPage_view.as_view(), name='projectPage'),
     path('tasks/', taskPage_view.as_view(), name='taskPage'),
+    path('tasks1/', taskPagedone_view.as_view(), name='taskPagedone'),
     path('project_tasks/', projectPageTask_view.as_view(), name='projectTaskPage'),
     path('roadmap/', projectPageRoadmap_view.as_view(), name='projectPageRoadmap'),
 ]

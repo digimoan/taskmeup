@@ -20,7 +20,7 @@
                     <tr>
                       <td>Prototype</td>
                       <td>PGP</td>
-                      <td>To Do</td>
+                      <td>Finished</td>
                         <td><img alt="edit" src="{% static "img/icon/edit.png"%}" id="edit" data-toggle="modal" data-target="#taskChangeModal"></td>
                     </tr>
                     <tr>
@@ -38,7 +38,7 @@
                 <div class="modal-body">
                     <form method="POST">
                         {% csrf_token %}
-                        <h5>Task: Prototype</h5>
+                        <h5>Task: #</h5>
                           <select name="type" id="type">
                             <option value="inProgress">In Progress</option>
                             <option value="toDo">To Do</option>
@@ -46,7 +46,7 @@
                             <option value="needHelp">Need Help</option>
                           </select>
                           <br><br>
-                          <a href="/tasks1" class="button start-button" style="float: none;">Ok</a>
+                          <input type="submit" id="okTask" value="Ok" >
                     </form>
                 </div>
             </div>

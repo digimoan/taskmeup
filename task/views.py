@@ -45,6 +45,12 @@ class taskPage_view(View):
     def get(self, request):
         return render(request, self.template)
 
+class taskPagedone_view(View):
+    template = 'taskpage_done.html'
+
+    def get(self, request):
+        return render(request, self.template)
+
 class projectPageRoadmap_view(View):
     template = 'project_page_roadmap.html'
 

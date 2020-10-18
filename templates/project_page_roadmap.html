@@ -1,135 +1,47 @@
 {% extends "base-loggedin.html" %}
 {% load static %}
 {% block content %}
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet"/>
 
 <div class="main">
     <div class="landing">
-        <img src="{% static "imgs/first.svg"%}" class="imgs">
         <div class="content">
+            <h1>PGP 2020</h1>
+            <b><p>Project Manager:</b> Margarida Penedos Lourenço</p>
+            <b><p>Start Date:</b> 27/09/2020</p>
+            <b><p>End Date:</b> 17/10/2020</p>
+            <br> <br>
 
 
-
-        <table class="table table-bordered table-striped table-hover">
-            <thead>
-                <tr>
-                    <th colspan="2">Activity</th>
-                    <th colspan="4" class="text-center">Set-20</th>
-                    <th colspan="4" class="text-center">Out-20</th>
-                    <th colspan="4" class="text-center">Nov-20</th>
-                    <th colspan="4" class="text-center">Dez-20</th>
-                    <th colspan="4" class="text-center">Jan-21</th>
-                    <th colspan="4" class="text-center">Fev-21</th>
-                    <th colspan="4" class="text-center">Mar-21</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="2">Prototype</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <div class="task passed" title="Task completed"></div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="2">Research</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <div class="task passed" title="Task completed" data-length="10"></div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <div class="task passed" title="Task completed" data-length="3"></div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="2">Program</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+            <img src="{% static "img/icon/roadmap.png"%}" style="width: 100%">
+            <img src="{% static "imgs/first.svg"%}" style="width: 30vw; margin-top: 50px;">
 
 
 
 
+        <a href="/roadmap" class="button start-button" style="float: none; margin-top: 20px; margin-left: 50px;">View Overview</a>
+    </div>
+
+        <!-- addTask modal -->
+    <div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog"
+         aria-labelledby="addTaskModalLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="text" id="task-name" class="fadeIn second" name="taskname"
+                               placeholder="task name">
+                        <input type="text" id="project-member" class="fadeIn second" name="taskmember" placeholder="assigned member">
+                        <input type="date" id="task-deadline" class="fadeIn third" name="deadline" placeholder="deadline dd/mm/yyyy">
+                        <input type="color" id="task-color" class="fadeIn fourth" name="color" placeholder="color">
+                        <a href="/project_tasks" class="button start-button fadeIn fourth" style="float: none;">Add</a>
+                        <br>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+    </div>
 </div>
-    {% endblock content %}
+
+{% endblock content %}
